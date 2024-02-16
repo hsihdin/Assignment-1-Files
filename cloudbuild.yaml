@@ -6,7 +6,7 @@ steps:
 images:
   - 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA'
 options:
-  machineType: 'E2'
+  machineType: E2
   defaultLogsBucket: 'gs://devops_log_bucket'
   defaultLogsBucketLocation: 'us-central1'
   substitutionOption: 'ALLOW_LOOSE'
