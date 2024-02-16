@@ -1,9 +1,13 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA']
+    args: ['push', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA']
 images:
-  - 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA'
+  - 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA'
 options:
+  machineType: E2_MEDIUM
+  defaultLogsBucket: 'gs://devops_log_bucket'
+  defaultLogsBucketLocation: 'us-central1'
+  substitutionOption: 'ALLOW_LOOSE'
   defaultLogsBucketBehavior: 'REGIONAL_USER_OWNED_BUCKET'
