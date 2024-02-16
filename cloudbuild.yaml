@@ -2,9 +2,9 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA']
+    args: ['push', 'nidhish-100859177/nidhish-100859177:$COMMIT_SHA']
 images:
-  - 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA'
+  - 'nidhish-100859177a:$COMMIT_SHA'
 options:
   machineType: E2_MEDIUM
   substitutionOption: 'ALLOW_LOOSE'
