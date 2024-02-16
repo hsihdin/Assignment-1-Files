@@ -1,6 +1,10 @@
+#Build the container Image
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA', '.']
+
+#Push the container Image
+
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA']
 
