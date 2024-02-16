@@ -4,8 +4,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA']
 images:
-  - us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA
+  - 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA'
 options:
   defaultLogsBucketBehavior: 'REGIONAL_USER_OWNED_BUCKET'
-
-
