@@ -6,6 +6,4 @@ steps:
 images:
   - 'us-central1-docker.pkg.dev/devops-414504/nidhish-100859177:$COMMIT_SHA'
 options:
-  machineType: E2_MEDIUM
-  substitutionOption: 'ALLOW_LOOSE'
   defaultLogsBucketBehavior: 'REGIONAL_USER_OWNED_BUCKET'
