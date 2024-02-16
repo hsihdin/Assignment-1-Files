@@ -3,6 +3,21 @@ steps:
     args: ['build', '-t', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA']
+
+  # Deploy the Docker container to Google Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'sh'
+    args: 
+      - '-c'
+      - |
+        gcloud run deploy nodejs-app \
+          --image=gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA \
+          --platform=managed \
+          --region=us-central1 \
+          --port=3000 \
+          --allow-unauthenticated
+ 
+ 
 images:
   - 'gcr.io/devops-414504/nidhish-100859177:$COMMIT_SHA'
 options:
